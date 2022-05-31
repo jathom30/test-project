@@ -4,49 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Project</title>
+    <title>Coin Flip</title>
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <h1>New Project</h1>
-    <ul style="background-color: lightblue;">
-      <li>Coin flip</li>
-      <li>Dnd dice</li>
-      <li>Tip calc</li>
-      <li>Pet adoption page</li>
-    </ul>
-    <div class="section">
-      <h2>Section</h2>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae ab sed dolor illum explicabo, reprehenderit ratione consequatur a excepturi facere cum aliquam doloribus repudiandae. Fugit a architecto fugiat inventore reiciendis?</p>
+    <h1>Coin flip</h1>
+
+    <div id="coin"></div>
+    
+    <button id="flipBtn" onclick="flipCoin()">Flip a coin</button>
+
+    <div>
+      <input type="number" id="number-of-flips" min="0">
+      <button id="flipTimesBtn" onclick="flipTimesBtn()">Flip coin X times</button>
     </div>
-    <div class="section">
-      <h2>Section</h2>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae ab sed dolor illum explicabo, reprehenderit ratione consequatur a excepturi facere cum aliquam doloribus repudiandae. Fugit a architecto fugiat inventore reiciendis?</p>
-    </div>
-    <div class="section">
-      <h2>Section</h2>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae ab sed dolor illum explicabo, reprehenderit ratione consequatur a excepturi facere cum aliquam doloribus repudiandae. Fugit a architecto fugiat inventore reiciendis?</p>
-    </div>
-    <div class="cats">
-      <img class="cat-img" src="https://icatcare.org/app/uploads/2018/07/Thinking-of-getting-a-cat.png" alt="cat">
-      <img class="cat-img" src="https://icatcare.org/app/uploads/2018/07/Thinking-of-getting-a-cat.png" alt="cat">
-      <img class="cat-img" src="https://icatcare.org/app/uploads/2018/07/Thinking-of-getting-a-cat.png" alt="cat">
-      <img class="cat-img" src="https://icatcare.org/app/uploads/2018/07/Thinking-of-getting-a-cat.png" alt="cat">
-      <img class="cat-img" src="https://icatcare.org/app/uploads/2018/07/Thinking-of-getting-a-cat.png" alt="cat">
-      <img class="cat-img" src="https://icatcare.org/app/uploads/2018/07/Thinking-of-getting-a-cat.png" alt="cat">
-      <img class="cat-img" src="https://icatcare.org/app/uploads/2018/07/Thinking-of-getting-a-cat.png" alt="cat">
-      <img class="cat-img" src="https://icatcare.org/app/uploads/2018/07/Thinking-of-getting-a-cat.png" alt="cat">
-      <img class="cat-img" src="https://icatcare.org/app/uploads/2018/07/Thinking-of-getting-a-cat.png" alt="cat">
-      <img class="cat-img" src="https://icatcare.org/app/uploads/2018/07/Thinking-of-getting-a-cat.png" alt="cat">
-      <img class="cat-img" src="https://icatcare.org/app/uploads/2018/07/Thinking-of-getting-a-cat.png" alt="cat">
-      <img class="cat-img" src="https://icatcare.org/app/uploads/2018/07/Thinking-of-getting-a-cat.png" alt="cat">
-      <img class="cat-img" src="https://icatcare.org/app/uploads/2018/07/Thinking-of-getting-a-cat.png" alt="cat">
-      <img class="cat-img" src="https://icatcare.org/app/uploads/2018/07/Thinking-of-getting-a-cat.png" alt="cat">
-      <img class="cat-img" src="https://icatcare.org/app/uploads/2018/07/Thinking-of-getting-a-cat.png" alt="cat">
-      <img class="cat-img" src="https://icatcare.org/app/uploads/2018/07/Thinking-of-getting-a-cat.png" alt="cat">
-      <img class="cat-img" src="https://icatcare.org/app/uploads/2018/07/Thinking-of-getting-a-cat.png" alt="cat">
-      <img class="cat-img" src="https://icatcare.org/app/uploads/2018/07/Thinking-of-getting-a-cat.png" alt="cat">
-    </div>
-    <script src="scripts.js"></script>
+
+    <div id="results"></div>
+
+
+    <script src="coinFlip.js"></script>
   </body>
 </html>
+

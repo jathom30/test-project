@@ -8,29 +8,31 @@ h1, h2, h3, p, body, ul {
 
 body {
   min-height: 100vh;
-  /* border: 5px solid red; */
   padding: 1rem;
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 1rem;
-}
-
-.section {
   display: flex;
+  flex-direction: column;
   gap: 1rem;
   align-items: center;
-  grid-column: 1 / 3;
 }
 
-.cats {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-column: 1 / 3;
+#coin {
+  background: gold;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: darkgoldenrod;
+  border: 3px solid darkgoldenrod;
+  aspect-ratio: 1 / 1;
+  min-width: 200px;
+  font-size: 2rem;
+}
+
+#results {
+}
+
+.space-between {
+  display: flex;
+  justify-content: space-between;
   gap: 1rem;
-}
-
-.cat-img {
-  width: 100%;
-  aspect-ratio: 1/1;
-  object-fit: cover;
 }
