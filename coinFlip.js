@@ -67,6 +67,6 @@ const flipTimesBtn = () => {
       return
     }
     i++
-  }, 200)
+  }, 100)
   
 }
