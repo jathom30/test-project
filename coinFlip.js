@@ -8,6 +8,7 @@ let resultOfTails = 0
 const coin = document.getElementById('coin')
 const results = document.getElementById('results')
 const input = document.getElementById('number-of-flips')
+const flipTimes = document.getElementById('flipTimesBtn')
 
 const paintResults = () => {
   const localFlips = localStorage.getItem('totalFlips')
@@ -47,6 +48,7 @@ const flipCoin = () => {
 }
 
 const flipTimesBtn = () => {
+  flipTimes.disabled = true
   const numberOfFlips = input.value
   // if no flips, return
   if (!numberOfFlips || numberOfFlips < 0) {
@@ -55,8 +57,16 @@ const flipTimesBtn = () => {
   totalFlips = 0
   resultOfHeads = 0
   resultOfTails = 0
-  for (let i = 0; i < numberOfFlips; i++) {
-    flipCoin()
-  }
+  let i = 0
+
+  setInterval(() => {
+    if (i < numberOfFlips) {
+      flipCoin()
+    } else {
+      flipTimes.disabled = false
+      return
+    }
+    i++
+  }, 200)
   
 }
