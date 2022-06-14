@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dogs</title>
+  <link rel="stylesheet" href="dogs.css">
+</head>
+<body>
+  <h1>Dogs</h1>
+  <label for="dog-breeds">
+    <span>Select a breed</span>
+    <select
+      name="dog-breeds"
+      id="dog-breeds"
+      onchange="handleSelectBreed(this)"
+      disabled
+    >
+      <option>Loading...</option>
+      <!-- breed options -->
+    </select>
+  </label>
+  <label for="number-of-images">
+    <span>How many images</span>
+    <input
+      type="range"
+      name="number-of-images"
+      id="number-of-images"
+      min="1"
+      max="50"
+      value="8"
+    >
+  </label>
+  <div id="dog-display"></div>
+  <script src="dogs.js"></script>
+</body>
+</html>
