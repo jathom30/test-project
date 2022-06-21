@@ -4,6 +4,8 @@ const dogsSelect = document.getElementById('dog-breeds')
 const dogDisplay = document.getElementById('dog-display')
 const numberOfImages = document.getElementById('number-of-images')
 
+numberOfImages.disabled = true
+
 const getAllBreeds = () => {
   fetch(`${basePath}/breeds/list/all`)
   .then(res => res.json())
@@ -28,7 +30,7 @@ const getAllBreeds = () => {
       `<option value="${breed}">${breed}</option>`
     ))
     dogsSelect.innerHTML = [
-      `<option>Select a breed</option>`,
+      `<option selected disabled hidden>Select a breed</option>`,
       ...breedOptions
     ]
     dogsSelect.disabled = false
@@ -37,12 +39,12 @@ const getAllBreeds = () => {
 
 getAllBreeds()
 
-const getByBreed = (breed) => {
+const getByBreed = (breed, number) => {
   const formattedBreed = breed.split(' ').reverse().join('/')
 
   dogDisplay.innerHTML = "Loading..."
 
-  fetch(`${basePath}/breed/${formattedBreed}/images/random/${numberOfImages.value}`)
+  fetch(`${basePath}/breed/${formattedBreed}/images/random/${number}`)
   .then(res => res.json())
   .then(data => {
     const images = data.message
@@ -54,22 +56,14 @@ const getByBreed = (breed) => {
 }
 
 const handleSelectBreed = (event) => {
-  getByBreed(event.value)
+  // event.value == a breed of dog
+  getByBreed(event.value, numberOfImages.value)
+  if (numberOfImages.disabled) {
+    numberOfImages.disabled = false
+  }
 }
 
-
-
-var formatter = new Intl.NumberFormat('en-US', {
-  style: 'currency',
-  currency: 'USD',
-
-  // These options are needed to round to whole numbers if that's what you want.
-  //minimumFractionDigits: 0, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)
-  //maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
-});
-
-const shoppingCartTotal = 0.2 + 0.1
-
-
-const formattedTotal = formatter.format(shoppingCartTotal)
-console.log(formattedTotal)
+const handleSelectImageCountOfBreed = (event) => {
+  // event.value == image count
+  getByBreed(dogsSelect.value, event.value)
+}
