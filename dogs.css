@@ -11,13 +11,29 @@
   aspect-ratio: 1 / 1;
 }
 
+.dog-image--random {
+  object-fit: cover;
+  max-width: 600px;
+}
+
 .user-inputs {
   max-width: 400px;
   margin: 0 auto;
   display: flex;
   justify-content: space-around;
+  gap: 1rem;
 }
 
 .user-inputs label {
   width: min-content;
+}
+
+.random-image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.random-image-container__title {
+  text-transform: capitalize;
 }
